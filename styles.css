@@ -143,18 +143,173 @@ svg {
     fill: currentColor;
 }
 
-/* Configuramos la tipografía para toda la web */
 body {
     min-height: 100vh;
     font-size: 100%;
     font-family: var(--tipo-principal);
     color: var(--negro);
-    /* (Opcional) */
     hyphens: auto;
-    /* (Opcional) */
     font-smooth: always;
-    /* (Opcional) */
     -webkit-font-smoothing: antialiased;
-    /* (Opcional) */
     -moz-osx-font-smoothing: grayscale;
 }
+
+.header{
+    background: lightblue;
+    width: 100%;
+    min-height: 5em;
+
+    padding: 1em 2em;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    display: none;
+}
+.header .h1{}
+.header .h1 .a{}
+.header .nav{}
+.header .ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .li{
+    margin: 0 1em;
+}
+.header .li .a{}
+
+
+.main{
+    background: lightgray;
+    /* margin: 0 0 1em; */
+    text-align: center;
+}
+
+.seccion{
+    width: 100%;
+    min-height: 90vh;
+    background: lightblue;
+    padding: 2em;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.seccion .h2{
+    font-family: var(--tipo-principal);
+    font-size: 5em;
+    font-weight: 600;
+}
+.seccion .h3{
+    font-family: var(--tipo-principal);
+    font-size: 3em;
+    font-style: italic;
+}
+.seccion .ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.seccion .ul .li{
+    margin: 0 1em;
+}
+.seccion .ul .a{
+    background: red;
+    font-family: var(--tipo-secundaria);
+}
+
+.seccion .p{}
+
+.seccion .grid{
+    width: 90%;
+    max-width: 40em;
+    background: lightcoral;
+    margin: 1em 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1em;
+}
+.seccion .article{
+    width: 100%;
+    min-height: 20vh;
+    background: lightgoldenrodyellow;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.seccion .a{}
+.seccion .img{
+    width: 100%;
+    background: lightgreen;
+}
+.seccion .h4{
+    width: 100%;
+    height: 25%;
+    background: lightseagreen;
+    position: absolute;
+    left: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.seccion .a .p{
+    width: 100%;
+    height: 25%;
+    background: lightpink;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.about{}
+.about .h2{
+    margin: 0 0 1rem;
+}
+.about .p{
+    max-width: 40em;
+    margin: 0 0 1em;
+    text-align: left;
+
+}
+.about .social{
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.about .li{
+    background: orange;
+    margin: 0 1em;
+}
+.about .a{}
+.about .svg{
+    width: 3em;
+    height: 3em;
+    background: red;
+}
+
+.footer{
+    background: lightcoral;
+    padding: 2em 0;
+    text-align: center;
+}
+.footer .span{}
