@@ -166,6 +166,7 @@ body {
     align-items: center;
 
     backdrop-filter: blur(0.2rem);
+    position: fixed;
 }
 
 .header .a .img {
