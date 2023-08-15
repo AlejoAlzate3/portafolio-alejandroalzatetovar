@@ -20,7 +20,6 @@
     }
 }
 
-/* Reseteamos los margin y paddings de todas las etiquetas */
 *,
 *::before,
 *::after {
@@ -36,7 +35,6 @@
     display: block;
 }
 
-/* Evitamos problemas con las imagenes */
 img,
 picture,
 video,
@@ -49,7 +47,6 @@ figure {
     object-position: center center;
 }
 
-/* Reseteamos los enlaces para funcionar como cajas... */
 a {
     display: block;
     text-decoration: none;
@@ -57,22 +54,18 @@ a {
     font-size: inherit;
 }
 
-/* ... excepto los que se encuentran en párrafos */
 p a {
     display: inline;
 }
 
-/* Quitamos los puntos de los <li> */
 li {
     list-style-type: none;
 }
 
-/* (Opcional) Configuramos anclas suaves */
 html {
     scroll-behavior: smooth;
 }
 
-/* Desactivamos estilos por defecto de las principales etiquetas de texto */
 h1,
 h2,
 h3,
@@ -95,7 +88,6 @@ em {
     color: inherit;
 }
 
-/* Evitamos problemas con los pseudoelementos de quotes */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -104,7 +96,6 @@ q:after {
     content: none;
 }
 
-/* Nivelamos problemas de tipografías y colocación de formularios */
 form,
 input,
 textarea,
@@ -117,11 +108,9 @@ label {
     background-color: transparent;
     color: inherit;
     display: block;
-    /* (Opcional) */
     appearance: none;
 }
 
-/* Reseteamos las tablas */
 table,
 tr,
 td {
@@ -129,7 +118,6 @@ td {
     border-spacing: 0;
 }
 
-/* Evitamos problemas con los SVG */
 svg {
     width: 100%;
     display: block;
@@ -146,6 +134,7 @@ body {
     hyphens: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    cursor: none;
 }
 
 .bg-primary-500 {
@@ -157,7 +146,7 @@ body {
     width: calc(100% - 2em);
     max-width: var(--limite);
     margin: 2em auto;
-    padding: 2em;
+    padding: 1em;
     position: fixed;
     top: 0;
     left: 50%;
@@ -223,13 +212,14 @@ body {
 .main {
     margin: 0 0 1em;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .seccion {
     width: 100%;
     min-height: 90vh;
-
-    padding: 2em;
+    /* padding: 1em; */
 
     display: flex;
     flex-flow: column wrap;
@@ -237,10 +227,16 @@ body {
     align-items: center;
 }
 
+.seccion .info{
+    animation: aparecer1 2s ease 1 both;
+}
+
 .seccion .h2 {
     font-family: var(--tipo-principal);
-    font-size: 6em;
+    font-size: 5em;
     font-weight: 600;
+    line-height: 1em;
+    mix-blend-mode: exclusion;
 }
 
 .seccion .h3 {
@@ -248,11 +244,6 @@ body {
     font-size: 4em;
     font-style: italic;
     color: #89fd04fa;
-
-    /* background-image: linear-gradient(45deg, #ef0808 0%, #992a09 35%, #a6f65c 85%, #5fe70b 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text; */
 }
 
 .seccion .ul {
@@ -274,12 +265,16 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     transition: all .3s ease;
+    animation: aparecer1 2s ease 1 backwards;
+}
+
+.seccion .ul>:nth-of-type(2) .a {
+    animation-delay: .2s;
 }
 
 .seccion .ul .a:hover {
     border-color: #89fd04fa;
 }
-
 
 .seccion .p {
     font-size: 1.5em;
@@ -291,13 +286,14 @@ body {
 }
 
 .seccion .grid {
-    width: 60%;
+    width: 100%;
     padding: 2em;
-    margin: 2em 0;
+    margin: 1em 0;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1em;
+
     border-radius: 1em;
     background: rgba(0, 0, 0, 0.214);
     border: 2px solid rgba(255,255,255,.063);
@@ -314,16 +310,15 @@ body {
 
     position: relative;
     overflow: hidden;
+    border-radius: 1em;
+    object-fit: cover;
 }
 
-.seccion .a {}
-
-.seccion .img {
-    overflow: hidden;
-    max-width: initial;
+.seccion .article .img {
+    background-size: cover;
 }
 
-.seccion .div-info {
+.seccion .article .div-info {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
@@ -333,29 +328,32 @@ body {
     left: 0;
 
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 
     color: white;
 
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateZ(1) scale(1.2);
     transition: all .5s ease;
 }
 
 .seccion .article:hover .div-info {
     opacity: 1;
-    transform: translateX(0%);
+    transform: translateZ(1) scale(1);
 }
 
 .seccion .div-info .h4 {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 600;
-    margin: 0 0 1rem;
 }
 
-.seccion .div-info .a .p {}
+.seccion .div-info .p {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0 0 1em;
+}
 
 
 .about {}
@@ -393,11 +391,53 @@ body {
     height: 3em;
 }
 
-
 .footer {
-    padding: 2em 0;
     text-align: center;
+
+    width: calc(100% - 2em);
+    max-width: var(--limite);
+    margin: 2em auto;
+    padding: 2em;
+    bottom: 0;
+    left: 50%;
     backdrop-filter: blur(0.2rem);
+
+    border-radius: 2em;
+    border: .125rem solid rgba(255, 255, 255, .063);
 }
 
 .footer .span {}
+
+#cursor {
+    width: 4em;
+    height: 4em;
+    background-color: rgba(119, 240, 5, 0.325);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+
+#cursor.mini {
+    transform: scale(0.7);
+}
+
+@keyframes aparecer1 {
+    from{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@media screen and (max-width: 589px) {
+    .header {
+        display: none;
+    }
+}
