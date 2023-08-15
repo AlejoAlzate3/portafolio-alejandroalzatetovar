@@ -3,9 +3,10 @@
     /* Colores */
     --negro: #393939;
     --blanco: white
-        /* Tipografía */
-        --tipo-principal: Helvetica, Arial, sans-serif;
+    /* Tipografía */
+    --tipo-principal: Helvetica, Arial, sans-serif;
     --tipo-secundaria: Verdana;
+    --limite:120em;
 }
 
 @media (prefers-contrast: high) {
@@ -44,9 +45,7 @@ figure {
     max-width: 100%;
     width: 100%;
     display: block;
-    /* (Opcional) */
     object-fit: cover;
-    /* (Opcional) */
     object-position: center center;
 }
 
@@ -155,22 +154,28 @@ body {
 }
 
 .header {
-    width: 100%;
-    min-height: 5em;
-
-    padding: 1em 2em;
+    width: calc(100% - 2em);
+    max-width: var(--limite);
+    margin: 2em auto;
+    padding: 2em;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(0.2rem);
+    z-index: 10;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    border-radius: 2em;
+    border: .125rem solid rgba(255, 255, 255, .063);
 
-    backdrop-filter: blur(0.2rem);
-    position: fixed;
 }
 
 .header .a .img {
-    width: 5em;
+    width: 4em;
 }
 
 .header .nav {
@@ -184,7 +189,7 @@ body {
     align-items: center;
 
     margin: 0 1em;
-    font-size: 1.2em;
+    font-size: 1.3em;
     letter-spacing: .0313rem;
 }
 
@@ -222,7 +227,7 @@ body {
 
 .seccion {
     width: 100%;
-    min-height: 80vh;
+    min-height: 90vh;
 
     padding: 2em;
 
@@ -259,7 +264,7 @@ body {
 }
 
 .seccion .ul .li {
-    margin: 0 1em;
+    margin: 1em;
 }
 
 .seccion .ul .a {
@@ -276,7 +281,9 @@ body {
 }
 
 
-.seccion .p {}
+.seccion .p {
+    font-size: 1.5em;
+}
 
 .works .h2 {
     margin: 0 0 1rem;
@@ -284,12 +291,16 @@ body {
 }
 
 .seccion .grid {
-    max-width: 40em;
-    margin: 1em 0;
+    width: 60%;
+    padding: 2em;
+    margin: 2em 0;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2em;
+    border-radius: 1em;
+    background: rgba(0, 0, 0, 0.214);
+    border: 2px solid rgba(255,255,255,.063);
 }
 
 .seccion .article {
@@ -308,8 +319,8 @@ body {
 .seccion .a {}
 
 .seccion .img {
-    width: 100%;
-    background: lightgreen;
+    overflow: hidden;
+    max-width: initial;
 }
 
 .seccion .div-info {
