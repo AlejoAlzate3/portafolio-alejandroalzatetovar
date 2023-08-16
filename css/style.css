@@ -212,7 +212,7 @@ body {
 .seccion {
     width: 100%;
     min-height: 80vh;
-    /* padding: 1em; */
+    padding: 1em;
 
     display: flex;
     flex-flow: column wrap;
@@ -461,13 +461,19 @@ body {
     }
 }
 
+@media screen and (max-width: 320px) {
+    .seccion {
+        margin-top: 2em;
+    }
+}
+
 @media screen and (max-width: 375px) {
     .header {
         display: none;
     }
 
     .seccion .grid {
-        width: 90%;
+        width: 95%;
         max-width: 40em;
         padding: 1em;
     }
@@ -491,7 +497,7 @@ body {
 
 @media screen and (max-width: 480px) {
     .seccion .h2 {
-        font-size: 3.5em;
+        font-size: 3em;
     }
     .seccion .h3 {
         font-size: 3em;
@@ -502,7 +508,7 @@ body {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 376px) and  (max-width: 768px) {
     .seccion .info{
         padding-top: 6.25rem;
     }
