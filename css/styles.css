@@ -1,16 +1,9 @@
-/* Definimos las Custom properties */
 :root {
-    /* Colores */
     --negro: #393939;
-    --blanco: white
-    /* Tipografía */
-    --tipo-principal: Helvetica, Arial, sans-serif;
+    --blanco: white;
+    --tipo-principal: 'Playfair Display', serif;
     --tipo-secundaria: Verdana;
     --limite:120em;
-}
-
-@media (prefers-contrast: high) {
-    :root {}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -130,7 +123,7 @@ body {
     background-image: radial-gradient(hsla(0, 0%, 58%, .3) .0625rem, transparent 0);
     background-size: 1.25rem 1.25rem;
     font-family: var(--tipo-principal);
-    color: white;
+    color: var(--blanco);
     hyphens: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -142,10 +135,11 @@ body {
     background-color: rgba(9 14 22/var(--tw-bg-opacity));
 }
 
+/** HEADER */
 .header {
     width: calc(100% - 2em);
     max-width: var(--limite);
-    margin: 2em auto;
+    margin: 1em auto;
     padding: 1em;
     position: fixed;
     top: 0;
@@ -207,7 +201,7 @@ body {
     background: #89fd04fa;
 }
 
-
+/** MAIN - SECCION */
 .main {
     margin: 0 0 1em;
     text-align: center;
@@ -217,7 +211,7 @@ body {
 
 .seccion {
     width: 100%;
-    min-height: 90vh;
+    min-height: 80vh;
     /* padding: 1em; */
 
     display: flex;
@@ -226,7 +220,9 @@ body {
     align-items: center;
 }
 
+/** SECCION: INFO - PROYECTS - SKILLS*/
 .seccion .info{
+    /* padding-top: 6.25rem; */
     animation: aparecer1 2s ease 1 both;
 }
 
@@ -354,6 +350,37 @@ body {
     margin: 0 0 1em;
 }
 
+.skill .h2 {
+    margin: 1rem;
+    color: #63fd048d;
+}
+
+.skill .skills {
+    width: 90%;
+    max-width: 40em;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1em;
+    background: rgba(0, 0, 0, 0.214);
+    border: 2px solid rgba(255,255,255,.063);
+}
+
+.skill .svg {
+    width: 3em;
+    height: 3em;
+    margin: 1em;
+}
+
+.skill .svg:hover {
+    transform: scale(1.2);
+}
+
+/** ABOUT ME */
 .about .h2 {
     margin: 1rem;
     color: #63fd048d;
@@ -385,6 +412,11 @@ body {
     height: 3em;
 }
 
+.about .svg:hover {
+    transform: scale(1.2);
+}
+
+/** FOOTER */
 .footer {
     text-align: center;
 
@@ -400,6 +432,7 @@ body {
     border: .125rem solid rgba(255, 255, 255, .063);
 }
 
+/** CURSOR */
 #cursor {
     width: 4em;
     height: 4em;
@@ -450,18 +483,27 @@ body {
     .seccion .p {
         font-size: 1.2em;
     }
+
+    .skill .h2 {
+        font-size: 3em;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .seccion .h2 {
-        font-size: 4em;
+        font-size: 3.5em;
     }
-
     .seccion .h3 {
         font-size: 3em;
     }
 
     .seccion .p {
         font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .seccion .info{
+        padding-top: 6.25rem;
     }
 }
