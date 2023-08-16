@@ -164,7 +164,7 @@ body {
 }
 
 .header .a .img {
-    width: 4em;
+    width: 4.5em;
 }
 
 .header .nav {
@@ -177,8 +177,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    margin: 0 1em;
-    font-size: 1.3em;
+    font-size: 1.2em;
     letter-spacing: .0313rem;
 }
 
@@ -237,6 +236,7 @@ body {
     font-weight: 600;
     line-height: 1em;
     mix-blend-mode: exclusion;
+    margin: 1rem;
 }
 
 .seccion .h3 {
@@ -244,6 +244,7 @@ body {
     font-size: 4em;
     font-style: italic;
     color: #89fd04fa;
+    margin: 1rem;
 }
 
 .seccion .ul {
@@ -278,17 +279,19 @@ body {
 
 .seccion .p {
     font-size: 1.5em;
+    margin: 1em;
 }
 
 .works .h2 {
-    margin: 0 0 1rem;
+    margin: 1rem;
     color: #63fd048d;
 }
 
 .seccion .grid {
-    width: 100%;
+    width: 90%;
+    max-width: 40em;
     padding: 2em;
-    margin: 1em 0;
+    margin: 1em;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -312,10 +315,6 @@ body {
     overflow: hidden;
     border-radius: 1em;
     object-fit: cover;
-}
-
-.seccion .article .img {
-    background-size: cover;
 }
 
 .seccion .article .div-info {
@@ -355,17 +354,14 @@ body {
     margin: 0 0 1em;
 }
 
-
-.about {}
-
 .about .h2 {
-    margin: 0 0 1rem;
+    margin: 1rem;
     color: #63fd048d;
 }
 
 .about .p {
     max-width: 40em;
-    margin: 0 0 2em;
+    margin: 1em;
     text-align: left;
     font-size: 1.5em;
     font-weight: 400;
@@ -375,7 +371,7 @@ body {
     width: 100%;
 
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
@@ -383,8 +379,6 @@ body {
 .about .li {
     margin: 0 1em;
 }
-
-.about .a {}
 
 .about .svg {
     width: 3em;
@@ -405,8 +399,6 @@ body {
     border-radius: 2em;
     border: .125rem solid rgba(255, 255, 255, .063);
 }
-
-.footer .span {}
 
 #cursor {
     width: 4em;
@@ -436,8 +428,40 @@ body {
     }
 }
 
-@media screen and (max-width: 589px) {
+@media screen and (max-width: 375px) {
     .header {
         display: none;
+    }
+
+    .seccion .grid {
+        width: 90%;
+        max-width: 40em;
+        padding: 1em;
+    }
+
+    .seccion .h2 {
+        font-size: 3.5em;
+    }
+
+    .seccion .h3 {
+        font-size: 2.5em;
+    }
+
+    .seccion .p {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .seccion .h2 {
+        font-size: 4em;
+    }
+
+    .seccion .h3 {
+        font-size: 3em;
+    }
+
+    .seccion .p {
+        font-size: 1.3em;
     }
 }
